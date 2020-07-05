@@ -7,6 +7,13 @@ set showcmd
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set laststatus=2
+set cursorline
+set noshowmode
+set nowrap
+set title
+set nowrapscan
+
 " Select Visual Code style color scheme (codedark)
 colorscheme codedark
 
@@ -34,11 +41,6 @@ augroup vimrc_help
   autocmd BufEnter *.txt if &buftype == 'help' | wincmd L | endif
 augroup END
 
-" Netrw Configurations
-let g:netrw_liststyle = 3 " The default listing style is wide(3)
-let g:netrw_banner = 0 " Remove the Banner
-let g:netrw_browse_split = 0 "Always open a new archive in the current tab
-
 " Provides vim access to all archives inside the project
 " getting a more complete tab-completion
 
@@ -47,3 +49,13 @@ set path+=**
 " Display all matching files when we tab complete
 
 set wildmenu
+
+" Netrw Configurations
+
+let g:netrw_banner=0        " disable annoying banner
+let g:netrw_browse_split=0  " open in prior window
+let g:netrw_altv=1          " open splits to the right
+let g:netrw_liststyle=3     " tree view
+
+" Snippets
+nnoremap _sig :-1read $HOME/.vim/snippets/programming_signature<CR>
